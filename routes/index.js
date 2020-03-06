@@ -1,9 +1,10 @@
 const express = require('express'),
-  router = express.Router();
+  router = express.Router(),
+  parksModel = require('../models/parks');
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
-  const parkList = await ParksModel.getAll();
+  const parkList = await parksModel.getAll();
 
   res.render('template', {
     locals: {
